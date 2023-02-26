@@ -5,4 +5,9 @@ import path from 'path';
 export default defineConfig({
     base: '/Tareas/',
     plugins: [vue()],
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './src'),
+        },
+    },
 });
