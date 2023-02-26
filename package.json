@@ -10,7 +10,7 @@
         "type-check": "vue-tsc --noEmit",
         "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist"
+        "deploy": "npm run build && firebase deploy"
     },
     "dependencies": {
         "@tailwindcss/line-clamp": "^0.4.2",
