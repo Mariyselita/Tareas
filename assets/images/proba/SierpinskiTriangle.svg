@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" 
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	viewBox="-1 0 2 1"
+	preserveAspectRatio="none meet"
+	width="744" height="644">
+<title>Sierpinski Triangle (Level 7)</title>         
+<rect id="background" fill="white" x="-1" y="0" width="2" height="1"/>
+<path d="M0,0 L1,1 H-1 z" fill="black"/>
+<path id="L2" d="M-0.5,0.5 h1 L0,1 z" fill="white"/>
+<g id="L3" transform="scale(0.5,0.5)">
+	<use xlink:href="#L2"/>
+	<use xlink:href="#L2" transform="translate(1,1)"/>
+	<use xlink:href="#L2" transform="translate(-1,1)"/>
+</g>
+<g id="L4" transform="scale(0.5,0.5)">
+	<use xlink:href="#L3"/>
+	<use xlink:href="#L3" transform="translate(1,1)"/>
+	<use xlink:href="#L3" transform="translate(-1,1)"/>
+</g>
+<g id="L5" transform="scale(0.5,0.5)">
+	<use xlink:href="#L4"/>
+	<use xlink:href="#L4" transform="translate(1,1)"/>
+	<use xlink:href="#L4" transform="translate(-1,1)"/>
+</g>
+<g id="L6" transform="scale(0.5,0.5)">
+	<use xlink:href="#L5"/>
+	<use xlink:href="#L5" transform="translate(1,1)"/>
+	<use xlink:href="#L5" transform="translate(-1,1)"/>
+</g>
+<g id="L7" transform="scale(0.5,0.5)">
+	<use xlink:href="#L6"/>
+	<use xlink:href="#L6" transform="translate(1,1)"/>
+	<use xlink:href="#L6" transform="translate(-1,1)"/>
+</g>
+<g id="L8" transform="scale(0.5,0.5)">
+	<use xlink:href="#L7"/>
+	<use xlink:href="#L7" transform="translate(1,1)"/>
+	<use xlink:href="#L7" transform="translate(-1,1)"/>
+</g>
+</svg>
