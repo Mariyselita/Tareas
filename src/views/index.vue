@@ -4,7 +4,7 @@
             <div class="relative">
                 <div class="container">
                     <div class="relative pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36">
-                        <h3>Marisela Cadena Cosmes</h3>
+                        <h3>Marisela Cadena Cosmes MCC</h3>
                     </div>
                 </div>
             </div>
