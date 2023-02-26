@@ -7,6 +7,7 @@ import EquilateralTriangule from "@/views/equilateral-triangle.vue";
 import { nextTick } from 'vue';
 
 const routes: RouteRecordRaw[] = [
+
     { path: '/', name: 'home', component: HomeView, meta: { title: 'Tareas' } },
     {
         path: '/simulate-dices',
