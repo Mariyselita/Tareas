@@ -1,13 +1,14 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 import { useAppStore } from '@/stores/index';
 import HomeView from '@/views/index.vue';
-import Dices from "@/views/simulate-dices.vue";
-import EquilateralTriangule from "@/views/equilateral-triangle.vue";
+import Dices from '@/views/Proba/simulate-dices.vue';
+import EquilateralTriangule from '@/views/Proba/equilateral-triangle.vue';
+import BayesianClassifier from '@/views/Proba/bayesian-classifier.vue';
+import Kurtosis from '@/views/Proba/kurtosis.vue';
 
 import { nextTick } from 'vue';
 
 const routes: RouteRecordRaw[] = [
-
     { path: '/', name: 'home', component: HomeView, meta: { title: 'Tareas' } },
     {
         path: '/simulate-dices',
@@ -20,6 +21,18 @@ const routes: RouteRecordRaw[] = [
         name: 'equilateral-triangle',
         component: EquilateralTriangule,
         meta: { title: 'Simular triángulo' },
+    },
+    {
+        path: '/bayesian-classifier',
+        name: 'bayesian-classifier',
+        component: BayesianClassifier,
+        meta: { title: 'Clasificador Bayesiano' },
+    },
+    {
+        path: '/kurtosis',
+        name: 'kurtosis',
+        component: Kurtosis,
+        meta: { title: 'Kurtosis' },
     },
     {
         path: '/:catchAll(.*)',

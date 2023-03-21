@@ -45,6 +45,7 @@
                                 <div class="submenu" @click="showMenu = false">
                                     <router-link to="/simulate-dices">Simulación de dados</router-link>
                                     <router-link to="/equilateral-triangle">Dado de 3 caras</router-link>
+                                    <router-link to="/equilateral-triangle">Números arábigos a romanos</router-link>
                                     <router-link to="/real-estate">Mínimo deseable de Pi</router-link>
                                     <router-link to="/#">Apuntes</router-link>
                                 </div>
