@@ -26,10 +26,11 @@
                             <li>Paradoja de Monty Hall</li>
                             <li>Kurtosis (k-ésimo momento)</li>
                             <li>Skewness</li>
+                            <li><router-link to="/chi">Chi cuadrada usando un dataset del Titanic</router-link></li>
                             <li>Demostración: Encontrar la varianza de la E.</li>
                             <li>Función generadora de momentos: 1ro y 2do (continuas y discretas)</li>
                             <li>Función generadora de momentos: 3ro y 4to</li>
-                            <li>Pares de 73 problemas</li>
+                            <li><router-link to="/pares">Pares de 73 problemas</router-link></li>
                         </ul>
                         <h5 class="font-semibold pt-6 pb-2">Lecturas</h5>
                         <ul>
@@ -60,7 +61,7 @@
                         <h5 class="font-semibold pt-6 pb-2">Lecturas</h5>
                         <ul>
                             <li>Historia de la computación y sus pioneros</li>
-                            <li>Godel. Escher. Bach: Una trenza de oro eterna </li>
+                            <li><router-link to="/trenza-dorada">Godel. Escher. Bach: Una trenza de oro eterna</router-link></li>
                         </ul>
                     </div>
                 </div>

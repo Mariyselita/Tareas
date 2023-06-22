@@ -5,6 +5,9 @@ import Dices from '@/views/Proba/simulate-dices.vue';
 import EquilateralTriangule from '@/views/Proba/equilateral-triangle.vue';
 import BayesianClassifier from '@/views/Proba/bayesian-classifier.vue';
 import Kurtosis from '@/views/Proba/kurtosis.vue';
+import Trenza from '@/views/Proba/trenza-dorada.vue';
+import Pares from '@/views/Proba/pares.vue';
+import Chi from '@/views/Proba/chi.vue';
 
 import { nextTick } from 'vue';
 
@@ -33,6 +36,24 @@ const routes: RouteRecordRaw[] = [
         name: 'kurtosis',
         component: Kurtosis,
         meta: { title: 'Kurtosis' },
+    },
+    {
+        path: '/pares',
+        name: 'pares',
+        component: Pares,
+        meta: { title: 'Pares' },
+    },
+    {
+        path: '/trenza-dorada',
+        name: 'trenza-dorada',
+        component: Trenza,
+        meta: { title: 'Libro Una eterna Trenza Dorada' },
+    },
+    {
+        path: '/chi',
+        name: 'chi',
+        component: Chi,
+        meta: { title: 'Chi cuadrada usando un dataset del Titanic' },
     },
     {
         path: '/:catchAll(.*)',

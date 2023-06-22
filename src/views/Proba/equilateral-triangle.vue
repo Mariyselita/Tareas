@@ -11,7 +11,7 @@
                             <img
                                 src="/assets/images/proba/Sierpinski_triangle_evolution.svg"
                                 alt="Sierpinski-triangle"
-                                class="rtl:rotate-y-0 mx-auto w-full max-w-[560px]"
+                                class="rtl:rotate-y-0 mx-auto mb-8 w-full max-w-[560px] md:mb-0"
                                 :data-aos="store.direction === 'rtl' ? 'fade-right' : 'fade-left'"
                                 data-aos-duration="1000"
                             />
@@ -22,8 +22,42 @@
         </div>
         <section class="py-6 dark:bg-gray-dark lg:py-6">
             <div class="container">
+                <div class="block">
+                    <h1 class="text-xl font-bold">Wacław Franciszek Sierpiński</h1>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="sm:col-span-2 col-span-12">
+                            <div class="text-justify">
+                                <p class="mt-2">
+                                    El polaco Wacław Franciszek Sierpiński (1882 - 1969) fue un matemático que hizo importantes descubrimientos en teoría de
+                                    conjuntos, teoría de números, análisis y topologías, publicando más de 700 artículos y 50 libros.
+                                </p>
+                                <p class="mt-2">
+                                    También inventó muchos fractales populares, incluidos el triángulo de Sierpinski, la alfombra de Sierpinski y la curva de
+                                    Sierpinski. Los números de Sierpinski son números naturales impares k de modo que k·2n+1 es compuesto para todos los números
+                                    naturales n. El problema de Sierpinski está tratando de encontrar los números más pequeños de Sierpinski. El número más
+                                    pequeño conocido es 78,557, pero aún se desconoce si hay otros más pequeños.
+                                </p>
+                                <h1 class="my-4 text-xl font-bold">Fractales</h1>
+                                <p>
+                                    Un <b>fractal</b> es una forma geométrica que tiene una <i>dimensión fraccional</i>. Muchos fractales famosos son
+                                    <i>auto-similares</i>, lo que significa que consisten en copias más pequeñas de sí mismos. Los fractales contienen patrones
+                                    en cada nivel de aumento, y se pueden crear repitiendo un procedimiento o iterando una ecuación infinitamente muchas veces.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hidden col-span-1 sm:flex">
+                            <img class="mx-auto h-80 " src="/assets/images/proba/dude.jpeg" alt="dude" />
+                        </div>
+                    </div>
+                    <img class="m-auto" src="assets/images/helechito.gif" alt="helecho" />
+
+                    <div class="grid gap-4 sm:grid-cols-2"></div>
+                </div>
+                <div class="mt-10">
+                    <h1 class="text-center text-xl font-bold">Simulación de triángulo de Sierpinski</h1>
+                </div>
                 <div class="relative z-10 lg:flex">
-                    <form action="" class="rounded-3xl bg-white px-4 py-12 dark:bg-[#101626] lg:w-full">
+                    <form action="" class="rounded-3xl px-4 py-12 lg:w-full">
                         <div class="grid gap-10 sm:grid-cols-2">
                             <div class="relative" v-if="false">
                                 <input
@@ -70,7 +104,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="mt-10 text-center ltr:lg:text-right rtl:lg:text-left">
+                        <div class="mt-2 text-center ltr:lg:text-right rtl:lg:text-left">
                             <button
                                 type="button"
                                 class="btn w-full bg-gray px-12 capitalize text-white disabled:cursor-not-allowed disabled:bg-gray disabled:opacity-80 dark:bg-white dark:text-black dark:hover:bg-secondary"
