@@ -26,10 +26,10 @@
                                 <a
                                     href="javascript:;"
                                     :class="{
-                                        active: $route.name === 'simulate-dices' || $route.name === 'equilateral-triangle' || $route.name === 'simulate-dices',
+                                        active: $route.name === 'simulate-dices' || $route.name === 'equilateral-triangle' || $route.name === 'chi' || $route.name === 'glc',
                                     }"
                                 >
-                                    Probabilidad
+                                    Códigos
                                     <div class="transition duration-500 group-hover:rotate-180 ltr:ml-2 rtl:mr-2">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -44,13 +44,12 @@
                                 </a>
                                 <div class="submenu" @click="showMenu = false">
                                     <router-link to="/simulate-dices">Simulación de dados</router-link>
-                                    <router-link to="/equilateral-triangle">Dado de 3 caras</router-link>
-                                    <router-link to="/equilateral-triangle">Números arábigos a romanos</router-link>
-                                    <router-link to="/real-estate">Mínimo deseable de Pi</router-link>
+                                    <router-link to="/equilateral-triangle">Triángulo</router-link>
+                                    <router-link to="/glc">Números arábigos a romanos</router-link>
+                                    <router-link to="/pi">Mínimo deseable de Pi</router-link>
+                                    <router-link to="/bayesian-classifier">Clasificador Bayesiano</router-link>
+                                    <router-link to="/chi">Chi cuadrada</router-link>
                                 </div>
-                            </li>
-                            <li>
-                                <router-link to="/portfolio" :class="{ active: $route.name === 'portfolio-detail' }">Teoría de la computación</router-link>
                             </li>
                         </ul>
                     </div>

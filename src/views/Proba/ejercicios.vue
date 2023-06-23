@@ -11,7 +11,7 @@
         },
         data() {
             return {
-                pdfPath: '/Test.pdf', // Ruta relativa al archivo PDF en la carpeta "public"
+                pdfPath: '/EjerciciosT.pdf', // Ruta relativa al archivo PDF en la carpeta "public"
             };
         },
     };

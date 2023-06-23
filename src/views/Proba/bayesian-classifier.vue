@@ -29,10 +29,15 @@
                     <div>
                         <p>Antes de hablar del Clasificador Bayesiano, es prudente comentar acerca del Teorema de Bayes para entrar en contexto.</p>
                         <h1 class="mt-6 text-xl font-bold">Teorema de Bayes</h1>
-                        Considérese el espacio muestral S y una partición de eventos mutuamente excluyentes A1, A2, ..., An. Sea un evento B de S que contiene
-                        parte de los Ai, esto es Naive Bayes es el algoritmo más sencillo que se puede aplicar a los datos. Como su nombre indica, este
-                        algoritmo asume que todas las variables del conjunto de datos son "naive", es decir, no están correlacionadas entre sí. Además es un
-                        algoritmo de clasificación muy popular que se utiliza principalmente para obtener la precisión base del conjunto de datos.
+                        <p>
+                            Considérese el espacio muestral S y una partición de eventos mutuamente excluyentes A1, A2, ..., An. Sea un evento B de S que
+                            contiene parte de los Ai, esto es Naive Bayes es el algoritmo más sencillo que se puede aplicar a los datos. Como su nombre indica,
+                            este algoritmo asume que todas las variables del conjunto de datos son "naive", es decir, no están correlacionadas entre sí.
+                        </p>
+
+                        <p class="my-2">
+                            Los clasificadores bayesianos son muy populares porque se utilizan principalmente para obtener la precisión base del conjunto de datos.
+                        </p>
                         <h1 class="mt-6 text-lg font-bold">Ventajas</h1>
                         <ul>
                             <li>Es fácil y rápido predecir la clase del conjunto de datos de prueba. También funciona bien en la predicción multiclase.</li>

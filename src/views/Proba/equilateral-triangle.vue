@@ -49,7 +49,7 @@
                             <img class="mx-auto h-80 " src="/assets/images/proba/dude.jpeg" alt="dude" />
                         </div>
                     </div>
-                    <img class="m-auto" src="assets/images/helechito.gif" alt="helecho" />
+                    <img class="m-auto" src="/assets/images/helechito.gif" alt="helecho" />
 
                     <div class="grid gap-4 sm:grid-cols-2"></div>
                 </div>
@@ -125,6 +125,7 @@
 </template>
 <script>
     import { useAppStore } from '@/stores/index';
+
     export default {
         data() {
             return {

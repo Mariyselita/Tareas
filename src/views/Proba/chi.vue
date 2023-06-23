@@ -71,40 +71,18 @@
                     <div class="grid grid-cols-2 gap-4 mt-4">
                         <div class="col-span-11 text-justify">
                             <h2 class="text-lg font-bold">Análisis de Chi cuadrado</h2>
-                            <p class="my-2">
-                                Se usa un análisis de chi-cuadrado cuando nuestros datos están en forma de recuentos sin procesar para dos o más grupos
-                                categóricos, por ejemplo, guisantes amarillos o semillas de guisantes verdes, tasa de supervivencia de ratones si tomaron el
-                                medicamento A o B, etc. Cada observación independiente definitivamente debe pertenecer a un grupo o al otro, y no debe haber
-                                réplicas. Es decir, para cada categoría solo tenemos un recuento.
-                            </p>
                             <p>
-                                Lo que hacemos es comparar las cuentas que obtuvimos con algún valor esperado de acuerdo con el azar o con alguna teoría previa.
-                                Por ejemplo: Si lanzáramos una moneda justa 1000 veces, esperaríamos 500 caras y 500 cruces, es decir, cara y cruz en la
-                                proporción 1:1. Si lanzáramos un dado justo un gran número de veces, esperaríamos que cada resultado posible, del 1 al 6,
-                                ocurriera el mismo número de veces. es decir, cada puntaje ocurriría 1/6 del tiempo. Si la idea básica de la herencia mendeliana
-                                es correcta, esperaríamos que si cruzáramos dos plantas de guisantes que fueran heterocigotas para el color de las semillas
-                                amarillo y verde, siendo el amarillo el dominante, entonces la descendencia tendría semillas amarillas: verdes en la proporción
-                                3: 1 (YY, YG, GY serían todos amarillos, GG sería verde). En una prueba de chi-cuadrado, nuestra hipótesis nula es que las
-                                ideas/teoría detrás de nosotros que obtienen las proporciones esperadas son correctas. Le damos estas proporciones esperadas y
-                                también los números que realmente obtuvimos. Luego nos da un valor p, una probabilidad, de qué tan probable es que obtengamos
-                                esos valores si esa hipótesis nula fuera correcta. Si este valor p es demasiado pequeño y, por lo general, queremos decir menos
-                                de 0,05, entonces rechazamos la hipótesis nula. Ejemplo Supongamos que hemos cruzado dos plantas de guisantes que eran
-                                heterocigotas para el color de la semilla amarillo/verde. Obtenemos 176 crías, de las cuales 130 fueron amarillas y 46 verdes.
-                                Los datos aquí son conteos sin procesar, y la descendencia de una planta de guisante individual contribuye al conteo amarillo o
-                                al conteo verde, pero no a ambos. Nuestros conteos esperados de amarillo y verde se encuentran simplemente dividiendo el conteo
-                                total, 76, en la proporción 3:1, lo que nos da 132 plantas amarillas esperadas y 44 plantas verdes esperadas.
+                                El conjunto de datos del Titanic es un conjunto de datos que contiene detalles de los pasajeros a bordo del Titanic cuando encontró su destino
+                                en 1912. En este cuaderno, compararemos cómo la clase del pasajero afecta la probabilidad (ambos son categóricos) con la prueba de chi cuadrado.
+                                Para la Introducción a la prueba de chi-cuadrado, consulte mi cuaderno anterior y este video.
                             </p>
+                        </div>
+                        <div class="language my-2">
+                            <code class="language-python" v-html="formattedCode"></code>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section>
-            <p>
-                El conjunto de datos del Titanic es un conjunto de datos que contiene detalles de los pasajeros a bordo del Titanic cuando encontró su destino
-                en 1912. En este cuaderno, compararemos cómo la clase del pasajero afecta la probabilidad (ambos son categóricos) con la prueba de chi cuadrado.
-                Para la Introducción a la prueba de chi-cuadrado, consulte mi cuaderno anterior y este video.
-            </p>
         </section>
     </div>
 </template>
@@ -112,12 +90,109 @@
 <script>
     import { useAppStore } from '@/stores/index';
     import MathLive from 'mathlive';
+    import Prism from 'prismjs';
+    import 'prismjs/themes/prism.css';
+    import 'prismjs/components/prism-python';
+    import 'prismjs/components/prism-rust';
 
     export default {
         name: 'app',
         components: {},
         data: function () {
             return {
+                codeA: `
+                ## Distribución de Chi Cuadrada
+## Alumna: Marisela Cadena
+
+
+library(tidyverse)
+library(reticulate)
+library(gmodels)
+
+names(titanic_dataset)
+str(titanic_dataset)
+summary(titanic_dataset)
+
+
+titanic_dataset$Survived <- factor(titanic_dataset$Survived, 
+                              levels = c(0,1), 
+                              labels = c("Dead", "Survived"))
+
+titanic_dataset$Sex <- factor(titanic_dataset$Sex,
+                         levels = c("male","female"),
+                         labels = c("Male","Female"))
+
+titanic_dataset$Embarked <- factor(titanic_dataset$Embarked, levels = c("C", "Q", "S"))
+
+titanic_dataset$Pclass <- factor(titanic_dataset$Pclass, 
+                            levels = c(1,2,3),
+                            labels = c("First Class", 
+                                       "Second Class", 
+                                       "Third Class"))
+
+rand.impute <- function(x) {
+  missing <- is.na(x) 
+  n.missing <- sum(missing)
+  x.obs <- x[!missing]
+  imputed <- x
+  imputed[missing] <- sample(x.obs, n.missing, replace = TRUE)
+  return (imputed)
+}
+
+titanic_dataset$Age <- rand.impute(titanic_dataset$Age)
+
+#Sobrevivientes en función del sexo
+CrossTable(titanic_dataset$Sex, titanic_dataset$Survived, dnn = c("Sex", "Survived"))
+
+titanic_dataset %>% 
+  ggplot() +
+  geom_bar(mapping = aes(Sex, fill = Survived))
+
+#Sobrevivientes en función de la clase
+
+CrossTable(titanic_dataset$Pclass, titanic_dataset$Survived, dnn = c("Pclass", "Survived"))
+
+titanic_dataset %>% 
+  ggplot()+
+  geom_bar(mapping = aes(x = Pclass, fill = Survived))
+
+#Sobrevivientes en función de la edad
+titanic_dataset$Age.cat <- cut(titanic_dataset$Age, 
+                          breaks = c(0, 14, 24, 64, Inf),
+                          labels = c("Niño", "Joven", "Adulto", "Mayor"))
+
+round(prop.table(table(titanic_dataset$Age.cat, 
+                       titanic_dataset$Survived,
+                       dnn =  c("Age", "Survived(%)")), 1)*100,2)
+
+titanic_dataset %>% 
+  ggplot()+
+  geom_bar(aes(Age.cat, fill = Survived))
+
+#Sobrevivientes en función del embarque
+
+CrossTable(titanic_dataset$Embarked, 
+           titanic_dataset$Survived, 
+           dnn = c("Embarked", "Survived"))
+titanic_dataset %>% 
+  ggplot()+
+  geom_bar(mapping = aes(x = Embarked, fill = Survived))
+
+#Sobrevivientes en función al  número de Hermanos/Cónyuges a bordo del Titanic 
+
+titanic_dataset %>% 
+  ggplot()+
+  geom_bar(mapping = aes(x = SibSp, fill = Survived))
+
+#Sobrevivientes en función al número de Padres/Hijos a bordo del Titanic
+
+titanic_dataset %>% 
+  ggplot()+
+  geom_bar(mapping = aes(x = Parch, fill = Survived))
+
+
+
+`,
                 formula: 'f(x)',
                 config: {
                     smartMode: false,
@@ -133,6 +208,11 @@
             spanElements.forEach((spanElement) => {
                 spanElement.style.display = 'none';
             });
+        },
+        computed: {
+            formattedCode() {
+                return Prism.highlight(this.codeA.trim(), Prism.languages.rust, 'rust').replace(/\n/g, '<br>');
+            },
         },
     };
 </script>

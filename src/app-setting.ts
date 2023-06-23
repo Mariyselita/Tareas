@@ -5,7 +5,7 @@ export default {
         const store = useAppStore();
 
         // set default styles
-        let val: any = localStorage.getItem('theme'); // light, dark
+        let val: any = localStorage.getItem('theme');
         val = val || 'light';
         store.toggleTheme(val);
 

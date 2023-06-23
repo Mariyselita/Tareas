@@ -5,9 +5,13 @@ import Dices from '@/views/Proba/simulate-dices.vue';
 import EquilateralTriangule from '@/views/Proba/equilateral-triangle.vue';
 import BayesianClassifier from '@/views/Proba/bayesian-classifier.vue';
 import Kurtosis from '@/views/Proba/kurtosis.vue';
+import Pi from '@/views/Proba/pi.vue';
 import Trenza from '@/views/Proba/trenza-dorada.vue';
 import Pares from '@/views/Proba/pares.vue';
+import EjerciciosT from '@/views/Proba/ejercicios.vue';
 import Chi from '@/views/Proba/chi.vue';
+import GLC from '@/views/Teoria/glc.vue';
+import DispositivoEpsilon from '@/views/Teoria/epsilon.vue';
 
 import { nextTick } from 'vue';
 
@@ -38,10 +42,22 @@ const routes: RouteRecordRaw[] = [
         meta: { title: 'Kurtosis' },
     },
     {
+        path: '/pi',
+        name: 'pi',
+        component: Pi,
+        meta: { title: 'Pi' },
+    },
+    {
         path: '/pares',
         name: 'pares',
         component: Pares,
         meta: { title: 'Pares' },
+    },
+    {
+        path: '/ejerciciost',
+        name: 'ejerciciost',
+        component: EjerciciosT,
+        meta: { title: 'Ejercicios Teoria' },
     },
     {
         path: '/trenza-dorada',
@@ -54,6 +70,18 @@ const routes: RouteRecordRaw[] = [
         name: 'chi',
         component: Chi,
         meta: { title: 'Chi cuadrada usando un dataset del Titanic' },
+    },
+    {
+        path: '/glc',
+        name: 'glc',
+        component: GLC,
+        meta: { title: 'Gramática Libre de Contexto' },
+    },
+    {
+        path: '/epsilon',
+        name: 'epsilon',
+        component: DispositivoEpsilon,
+        meta: { title: 'Dispositivos que usan epsilon' },
     },
     {
         path: '/:catchAll(.*)',
