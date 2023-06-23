@@ -73,9 +73,9 @@
                             <h2 class="text-lg font-bold">Análisis de Chi cuadrado</h2>
                             <p>
                                 El conjunto de datos del Titanic es un conjunto de datos que contiene detalles de los pasajeros a bordo del Titanic cuando encontró su destino
-                                en 1912. En este cuaderno, compararemos cómo la clase del pasajero afecta la probabilidad (ambos son categóricos) con la prueba de chi cuadrado.
-                                Para la Introducción a la prueba de chi-cuadrado, consulte mi cuaderno anterior y este video.
+                                en 1912. 
                             </p>
+                            <p>Para mayor información de la prueba, consulte <a class="text-secondary " href="https://www.youtube.com/watch?v=YC2w7pv-7DA">este repositorio</a> y para introducción a Chi cuadrado puede mirar este <a class="text-secondary" href="https://www.youtube.com/watch?v=YC2w7pv-7DA">video</a>.</p>
                         </div>
                         <div class="language my-2">
                             <code class="language-python" v-html="formattedCode"></code>
